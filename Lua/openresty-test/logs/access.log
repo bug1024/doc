@@ -1,0 +1,4 @@
+127.0.0.1 - - [08/Sep/2016:17:17:37 +0800] "HEAD / HTTP/1.1" 200 0 "-" "curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.19.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2"
+127.0.0.1 - - [08/Sep/2016:17:17:45 +0800] "GET / HTTP/1.1" 200 19 "-" "curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.19.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2"
+172.16.2.48 - - [08/Sep/2016:17:20:27 +0800] "GET / HTTP/1.1" 200 19 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+172.16.2.48 - - [08/Sep/2016:17:20:27 +0800] "GET /favicon.ico HTTP/1.1" 200 19 "http://172.16.1.12:8181/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"

@@ -1,0 +1,7 @@
+2016/09/08 17:16:55 [emerg] 21199#0: "access_log" directive is not allowed here in /www/doc/Lua/openresty-test/conf/nginx.conf:6
+2016/09/08 17:19:13 [emerg] 21292#0: bind() to 0.0.0.0:8181 failed (98: Address already in use)
+2016/09/08 17:19:13 [emerg] 21292#0: bind() to 0.0.0.0:8181 failed (98: Address already in use)
+2016/09/08 17:19:13 [emerg] 21292#0: bind() to 0.0.0.0:8181 failed (98: Address already in use)
+2016/09/08 17:19:13 [emerg] 21292#0: bind() to 0.0.0.0:8181 failed (98: Address already in use)
+2016/09/08 17:19:13 [emerg] 21292#0: bind() to 0.0.0.0:8181 failed (98: Address already in use)
+2016/09/08 17:19:13 [emerg] 21292#0: still could not bind()
