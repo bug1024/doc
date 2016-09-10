@@ -1,0 +1,2 @@
+
+ngx.say("Hello world")

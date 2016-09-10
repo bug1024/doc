@@ -1,0 +1,2 @@
+
+ngx.say("Hi Lua")
