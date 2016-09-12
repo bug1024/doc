@@ -2,6 +2,7 @@
 # 个人信息
 
  - 王煜/男/1990
+ - QQ：425103190(杀猪书生)
  - 本科/福建师范大学网络工程
  - 工作年限：2年
  - 爱好：篮球/健身
@@ -34,25 +35,28 @@
 
  - Web开发：PHP/Node/Lua
  - Web框架：Yaf/Laravel/ThinkPHP
- - 前端框架：JQuery/Bootstrap/AngularJS/VueJS
- - 前端工具：Gulp/Grunt
- - 数据库相关：MySQL/MongoDB/Redis/Memcache/ElasticSearch
- - 版本管理工具：Git/Svn
+ - 前端框架：JQuery/Bootstrap/AngularJS/Gulp
+ - 数据库：MySQL/MongoDB/Redis/Memcache/ElasticSearch
+ - 版本管理：Git/Svn
  - 测试工具：PHPUnit/PhantomJS
+ - 编辑器：Vim/PhpStorm
 
 ---
 
 ## 开源项目
 
  - [fis273](http://github.com/bug1024/fis273)
+ - [jeet-vim](http://github.com/bug1024/jeet-vim)
 
 ## 技术文章
 
- - [葫芦娃大战孙悟空](http://www.baidu.com/)
+ - [多城市站点升级方案](https://github.com/bug1024/doc/blob/master/Blog/website-upgrade.md)
 
 ## 演讲和讲义
 
- - 内部演讲：[外网前端编译工具](http://www.baidu.com/)
+ - [移动web开发](https://github.com/bug1024/doc/blob/master/Slide/mobile-develop.ppt)
+ - [表单全端组件](https://github.com/bug1024/doc/blob/master/Slide/form-validator.ppt)
+ - [Redis应用场景](https://github.com/bug1024/doc/blob/master/Slide/redis-application.ppt)
 
 ---
 
