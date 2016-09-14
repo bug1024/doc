@@ -35,7 +35,7 @@
 
 # 技能清单
 
- 以下均为我熟练使用的技能
+ 以下均为我熟练使用的技能，[升级之路](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md)
 
  - Web开发：PHP/Node/Lua
  - Web框架：Yaf/Laravel/ThinkPHP
@@ -44,8 +44,6 @@
  - 版本管理：Git/Svn
  - 测试工具：PHPUnit/PhantomJS
  - 编辑器：Vim/PhpStorm
-
- [升级之路](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md)
 
 ---
 
