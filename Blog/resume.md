@@ -2,12 +2,13 @@
 # 个人信息
 
  - 王煜/男/1990
- - 联系方式：15059130243/425103190(QQ)
+ - 联系电话：15059130243
+ - 电子邮箱：bug_1024@163.com
  - 教育经历：本科/福建师范大学/网络工程
  - 工作年限：2年
  - 英语水平：CET-6
  - 兴趣爱好：篮球/健身
- - 期望职位：PHP开发工程师/应用架构师
+ - 期望职位：PHP开发工程师
  - 期望薪资：税前月薪15k~20k，特别喜欢的公司可例外
  - 期望城市：福州/厦门
 
@@ -44,16 +45,14 @@
  - 测试工具：PHPUnit/PhantomJS
  - 编辑器：Vim/PhpStorm
 
+ [升级之路](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md)
+
 ---
 
 ## 开源项目
 
  - [fis273](http://github.com/bug1024/fis273)
  - [jeet-vim](http://github.com/bug1024/jeet-vim)
-
-## 技术文章
-
- - [多域名站点升级方案](https://github.com/bug1024/doc/blob/master/Blog/website-upgrade.md)
 
 ## 演讲和讲义
 
