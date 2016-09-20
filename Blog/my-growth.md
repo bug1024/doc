@@ -36,6 +36,7 @@
 
 ## Others
  - [《卓有成效的程序员》]()
+ - [《安全技术大系:Web前端黑客技术揭秘》]()
  - [《高效团队开发 工具与方法》]()
  - [《API Design Principles》](https://w3ctag.github.io/design-principles/)
  - [《全栈增长工程师实战》](http://growth-in-action.phodal.com/)
