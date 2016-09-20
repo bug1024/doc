@@ -45,8 +45,6 @@
  - 测试工具：PHPUnit/PhantomJS
  - 编辑器：Vim/PhpStorm
 
----
-
 ## 开源项目
 
  - [fis273](https://npm.taobao.org/package/fis273)
