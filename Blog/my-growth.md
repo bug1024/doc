@@ -12,6 +12,9 @@
  - [《精通JavaScript开发》]()
  - [《深入浅出Node.js》]()
 
+## DB
+ - [《MySQL技术内幕：SQL编程》]()
+
 ## Linux
  - [《高级Bash脚本编程指南》](http://www.lzhaohao.info/abs/)
  - [《Linux工具快速教程》](http://linuxtools-rst.readthedocs.io/zh_CN/latest/)
