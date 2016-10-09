@@ -3,14 +3,13 @@
  2016-09-15
 
 ## 编程
- - 每日github
  - 学习巩固Lua + Node
  - 深入了解OS
  - MySQL索引/事务/优化
  - Redis持久化配置/应用场景
  - Shpinx/Solr/ElasticSearch比较
  - OAuth2原理
- - PHP大版本特性
+ - PHP7特性
 
 ## 运动
  - 每日至少1w步
