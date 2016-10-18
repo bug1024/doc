@@ -33,7 +33,7 @@
 
 # 技能清单
 
- 以下均为我熟练使用的技能，[升级之路](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md)
+ 以下均为我熟练使用的技能
 
  - Web开发：PHP/Node/Lua
  - Web框架：Yaf/Laravel/ThinkPHP
@@ -48,10 +48,11 @@
  - [fis273](https://npm.taobao.org/package/fis273) 一套前端资源管理方案
  - [jeet-vim](http://github.com/bug1024/jeet-vim) 一套web开发者的vim配置方案
 
-## 日常浏览网站
+## 书籍网站
  - [开发者头条](http://toutiao.io/)
  - [湾区日报](https://wanqu.co/)
  - [Quora](https://www.quora.com/)
+ - [我的个人书单](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md)
 
 ---
 
