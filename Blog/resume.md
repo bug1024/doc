@@ -7,7 +7,7 @@
  - 英语水平：CET-6
  - 兴趣爱好：篮球/健身
  - 期望职位：PHP开发工程师
- - 自我总结: 合格PHPer，半个JSer，Lua爱好者，Go菜鸟，vim控
+ - 自我总结：合格PHPer，半个JSer，Lua爱好者，Go菜鸟，vim控
 
 ---
 
