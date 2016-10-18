@@ -1,10 +1,12 @@
 
 # 个人信息
 
+## 合格PHPer，半个JSer，Lua爱好者，Go菜鸟，vim控
+
  - 王煜/男/1990
  - 电子邮箱：bug1024.com@gmail.com
  - 教育经历：本科/福建师范大学/网络工程
- - 工作年限：2年
+ - 工作年限：2年4个月
  - 英语水平：CET-6
  - 兴趣爱好：篮球/健身
  - 期望职位：PHP开发工程师
@@ -19,15 +21,15 @@
  [www.273.cn](http://www.273.cn/) 索引量突破1亿，UV达到10w+，PV达到100w+，爬虫流量约800w。
  主要负责pc站业务开发以及基础库的维护，主导了最近一次的框架升级。
  期间完成了商品列表页重构、会员系统、电话转接系统、短信推送系统、用户行为数据统计等主要工作。
- 项目中涉及到了Redis、ElasticSearch、RabbitMQr等技术，并引入了PHP第三方扩展Yaf和Swoole。
+ 项目中涉及到了Redis、ElasticSearch、RabbitMQ等技术，并引入了PHP第三方扩展Yaf和Swoole。
  此外，在项目组中还负责新人培训等工作。
 
 ### app服务端
- 主要负责人，负责业务梳理、接口文档维护、性能优化以及Code Review，平均每3周迭代一个版本，[app下载链接](http://a.app.qq.com/o/simple.jsp?pkgname=cn.car273)。
+ 主要负责人，负责业务梳理、接口文档维护以及性能优化，平均每3周迭代一个版本，[app下载链接](http://a.app.qq.com/o/simple.jsp?pkgname=cn.car273)。
  过去2个月中，主导了服务端的一次重大升级重构，在缓存使用和接口字段结构上进行了较大的优化，使得接口平均响应时间降低了20%左右。
 
 ### 前端
- 负责编码规范的定制与基础组件的开发，引入FIS3前端框架进一步推进了前端模块化与工程化。
+ 负责编码规范的定制与基础组件的开发，致力于推进了前端模块化与工程化。
 
 ---
 
@@ -43,15 +45,14 @@
  - 测试工具：PHPUnit/PhantomJS
  - 编辑器：Vim/PhpStorm
 
-## 开源项目
+## 个人项目
 
- - [fis273](https://npm.taobao.org/package/fis273)
- - [jeet-vim](http://github.com/bug1024/jeet-vim)
+ - [fis273](https://npm.taobao.org/package/fis273) 一套前端资源管理方案
+ - [jeet-vim](http://github.com/bug1024/jeet-vim) 一套web开发者的vim配置方案
 
 ## 日常浏览网站
  - [开发者头条](http://toutiao.io/)
  - [湾区日报](https://wanqu.co/)
- - [知乎](https://www.zhihu.com/)
  - [Quora](https://www.quora.com/)
 
 ---
