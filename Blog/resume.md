@@ -49,10 +49,10 @@
  - [jeet-vim](http://github.com/bug1024/jeet-vim) 一套web开发者的vim配置方案
 
 ## 书籍网站
- - [开发者头条](http://toutiao.io/)
- - [湾区日报](https://wanqu.co/)
- - [Quora](https://www.quora.com/)
- - [我的个人书单](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md)
+ - [开发者头条](http://toutiao.io/) 一个程序员技术分享平台
+ - [湾区日报](https://wanqu.co/) 一个关于创业与技术的优质英文文章推荐网站
+ - [Quora](https://www.quora.com/) 一个国外的网络问答社区
+ - [个人书单](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md) 记录了本人工作后浏览过并觉得有价值的技术书籍
 
 ---
 
