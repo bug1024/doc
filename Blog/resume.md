@@ -20,13 +20,10 @@
 ### 主要项目
 
 #### 框架升级
- 引入Yaf和Swoole
+ 引入Yaf，优化异常处理，推进前端组件化
 
 #### 检索系统
- ElasticSearch + RabbitMQ + canal
-
-#### 会员系统
- OAuth2
+ MySQL + Canal + RabbitMQ + Solr
 
 #### 短信推送系统
  Swoole Task
