@@ -39,7 +39,10 @@
 
 ---
 
-# 技能清单
+# 个人技能
+ 喜欢阅读技术博客，关注热门技术，涉猎交广，喜欢折腾一些开源工具。
+
+## 常用技能
  - Web开发：PHP/Node/Lua
  - Web框架：Yaf/Laravel/ThinkPHP
  - 前端框架：jQuery/Bootstrap/AngularJS
