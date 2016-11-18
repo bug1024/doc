@@ -60,7 +60,7 @@
 ## 书籍网站
  - [开发者头条](http://toutiao.io/) 一个程序员技术分享平台
  - [湾区日报](https://wanqu.co/) 一个关于创业与技术的优质英文文章推荐网站
- - [个人书单](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md) 阅读过值的技术书籍
+ - [个人书单](https://github.com/bug1024/doc/blob/master/Blog/my-growth.md) 阅读过的技术书籍
 
 ---
 
