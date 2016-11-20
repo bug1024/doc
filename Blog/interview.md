@@ -2,7 +2,8 @@
 
 ### PHP
  - PHP7
- - 底层
+ - 启动-终止模型 Module Initializatin/Request Initialization/Request Shutdown/Module Shutdown
+ - 扩展开发 ext_skel conifg.m4
 
 ### mysql
  - 索引 explain用法 最左前缀匹配 Cardinality
@@ -12,7 +13,7 @@
  - 备份
 
 ## Nginx
- - 原理 master-slave
+ - 原理 master-worker
  - 配置
 
 ### redis
