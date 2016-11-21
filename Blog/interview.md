@@ -1,4 +1,3 @@
-# 面试
 
 ### PHP
  - PHP7
@@ -40,6 +39,7 @@
  - 进程与线程
  - 同步异步阻塞非阻塞
  - select poll epoll
+ - 工具：crontab awk strace tcpdump
 
 ### 算法
  - 排序
