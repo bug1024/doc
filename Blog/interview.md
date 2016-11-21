@@ -20,7 +20,7 @@
  - 持久化 rdb aof
 
 ### memcached
- - 一致性哈希
+ - [一致性哈希](http://coderroc.com/article/%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95/Consistent-Hashing.html)
  - [常见问题](http://kb.cnblogs.com/page/69074/)
 
 ### MongoDB
@@ -34,6 +34,7 @@
 
 ### 消息队列
  - RabbitMQ
+ - [原理](http://tech.meituan.com/mq-design.html)
 
 ### 操作系统
  - 进程与线程
