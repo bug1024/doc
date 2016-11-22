@@ -27,13 +27,16 @@
  - 场景 日志
  - bson
 
+### Swoole
+ - task底层使用Unix Socket管道通信，是全内存的，没有IO消耗
+
 ### 全文索引
  - Sphinx build/merge静态索引 实时性差但性能极佳
  - Solr 索引格式更多 建立索引时IO阻塞导致搜索性能下降 ZK进行分布式管理
  - ElasticSearch 实时 自带分布式协调管理功能
 
 ### 消息队列
- - RabbitMQ
+ - RabbitMQ 可靠消费具备消息消费确认
  - [原理](http://tech.meituan.com/mq-design.html)
 
 ### 操作系统
