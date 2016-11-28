@@ -29,11 +29,12 @@
 
 ### Swoole
  - task底层使用Unix Socket管道通信，是全内存的，没有IO消耗
+ - IO复用异步非阻塞程序使用经典的Reactor模型，本身不处理任何数据收发，只是可以监视一个socket句柄的事件变化，基于epoll
 
 ### 全文索引
  - Sphinx build/merge静态索引 实时性差但性能极佳
  - Solr 索引格式更多 建立索引时IO阻塞导致搜索性能下降 ZK进行分布式管理
- - ElasticSearch 实时 自带分布式协调管理功能
+ - ElasticSearch 实时 自带分布式协调管理功能 主从分片 节点 逆向索引
 
 ### 消息队列
  - RabbitMQ 可靠消费具备消息消费确认
