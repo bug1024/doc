@@ -1,0 +1,9 @@
+*.swp
+/.idea/
+/vendor/
+.DS_Store
+.buildpath
+.project
+/.settings/
+*.class
+*.o
