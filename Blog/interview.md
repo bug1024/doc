@@ -4,6 +4,7 @@
  - 启动-终止模型 Module Initializatin/Request Initialization/Request Shutdown/Module Shutdown
  - 扩展开发 ext_skel conifg.m4
  - 版本特性 5.3命名空间和匿名函数 5.4traits和[] 5.5yied关键字 异常finally opcache 5.6变长参数... phpdbg扩展 7??操作符 变量类型声明 优化zend
+ - 一个持有外部环境变量的函数就是闭包
 
 ### mysql
  - 索引 explain用法 最左前缀匹配 Cardinality
