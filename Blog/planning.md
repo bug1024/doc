@@ -1,23 +1,20 @@
-# 计划
-
- 2016-09-15
+# 2017计划
 
 ## 编程
- - 学习巩固Lua + Node
- - 深入了解OS
- - MySQL索引/事务/优化
- - Redis持久化配置/应用场景
- - Shpinx/Solr/ElasticSearch比较
- - OAuth2原理
- - PHP7特性
+ - 学习Java
+ - 熟悉操作系统原理
+ - 熟悉数据结构与算法
+ - 熟悉PHP底层
 
-## 运动
- - 每日至少1w步
- - 每日仰卧起坐100个
- - 每日哑铃100个
- - 每日引体向上50个
+## 系统学习
+ - MySQL
+ - Nginx
+ - Redis
+ - RabbitMQ
+ - ElasticSearch
+ - Thrift
 
 ## 英语
- - 每日单词10个
- - 每日阅读1w字
+ - TED视频
+ - 词汇量
 
