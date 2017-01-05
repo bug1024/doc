@@ -24,3 +24,6 @@ find ./ -name "*.php"
 
 搜索文本
 grep -rn xxxx ./*
+
+## TCP ESTABLISHED数量
+netstat -n|grep ^tcp|awk '{print $NF}'|sort -nr|uniq -c
