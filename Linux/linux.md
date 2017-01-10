@@ -14,3 +14,7 @@
  - PCB：进程存在的唯一标志
  - 调度：状态转换时发生调度，IO密集型/CPU密集型，进程树，overhead(系统消耗)
  - IPC：共享内存(生产者/消费者)/消息传递(send/recv)，busy waiting
+
+## CPU调度
+ - FCFS(First-Come First-Served)
+ - SJF(Shortest-Job-First)，preemptive(抢占式)
