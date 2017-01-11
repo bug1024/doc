@@ -18,3 +18,7 @@
 ## CPU调度
  - FCFS(First-Come First-Served)
  - SJF(Shortest-Job-First)，preemptive(抢占式)
+ - Priority Scheduling
+ - Round Robin
+ - Multilevel  Queue Scheduling
+ - Multilevel Feedback Queues
