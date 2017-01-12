@@ -22,3 +22,8 @@
  - Round Robin
  - Multilevel  Queue Scheduling
  - Multilevel Feedback Queues
+
+## 进程同步
+ - entry section, critical section, exit section, remainder section
+ - 临界区使用原则：互斥(忙则等待)，空闲让进，有限等待，让权等待
+ - semaphore: wait()用于申请资源, signal()用于释放资源
