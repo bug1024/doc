@@ -27,3 +27,5 @@
  - entry section, critical section, exit section, remainder section
  - 临界区使用原则：互斥(忙则等待)，空闲让进，有限等待，让权等待
  - semaphore: wait()用于申请资源, signal()用于释放资源
+ - 生产者消费者问题，读者写者问题，哲学家进餐问题
+ - 管程
