@@ -13,7 +13,7 @@
  - 3个基本状态：ready(就绪等cpu)/running(运行)/waiting(等待事件的发生)
  - PCB：进程存在的唯一标志
  - 调度：状态转换时发生调度，IO密集型/CPU密集型，进程树，overhead(系统消耗)
- - IPC：共享内存(生产者/消费者)/消息传递(send/recv)，busy waiting
+ - IPC：管道/共享内存(生产者/消费者)/消息传递(send/recv)/信号量/套接字，busy waiting
 
 ## CPU调度
  - FCFS(First-Come First-Served)
@@ -34,3 +34,7 @@
  - 两个或两个以上的进程由于竞争资源导致系统无法推进
  - 产生必要条件：互斥，占有必等待，非抢占，循环等待
  - 银行家算法(allocation,max,available)
+
+## 内存管理
+ - swapping, paging, segmentation
+ - 单CPU需要两个寄存器（基础+界限）
