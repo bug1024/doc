@@ -2,7 +2,7 @@
 
 - OLTP(Online Transaction Processing，联机事务处理)
 - OLAP(Online Analysis Processing，联机分析处理)
-- EXIST子查询中*可以放心使用，因为它只关心行是否存在，而不会去取各列的值
+- EXIST子查询中`*`可以放心使用，因为它只关心行是否存在，而不会去取各列的值
 - InnoDB中每个页的大小为16KB
 - Cardinality的统计是通过采样（sample）的方法来完成的
 - T树不存放数据，只存放指针，可减少对内存的使用
@@ -19,3 +19,7 @@
 ### 锁
  - MyISAM表锁是deadlock free的，这是因为MyISAM总是一次获得所需的全部锁，要么全部满足，要么等待，因此不会出现死锁。但在InnoDB中，除单个SQL组成的事务外，锁是逐步获得的，这就决定了在InnoDB中发生死锁
  - MyISAM表锁 InnoDB行锁
+
+### 线程池
+ - MySQL5.6出现以前，MySQL处理连接的方式是One-Connection-Per-Thread
+ - 适用于有大量短查询的业务场景
