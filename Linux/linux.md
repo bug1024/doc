@@ -39,3 +39,4 @@
  - swapping, paging, segmentation
  - 单CPU需要两个寄存器（基础+界限）
  - 逻辑地址 物理地址 重定位寄存器
+ - 分配：固定分区，可变分区
