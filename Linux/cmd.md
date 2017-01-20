@@ -27,3 +27,5 @@ grep -rn xxxx ./*
 
 ## TCP ESTABLISHED数量
 netstat -n|grep ^tcp|awk '{print $NF}'|sort -nr|uniq -c
+
+类似于/dev/null, /dev/zero也是一个伪文件, 但事实上它会产生一个null流(二进制的0流, 而不是ASCII类型)
