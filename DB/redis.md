@@ -32,6 +32,9 @@ rdb配置
     rdbchecksum yes 对rdb文件进行校验
 
 ```
+## Redis Cluster
+ - Redis 集群不像单机Redis 那样支持多数据库功能， 集群只使用默认的 0 号数据库， 并且不能使用 SELECT 命令。
+ - 节点之间使用Gossip 协议 来进行以下工作
 
 ## 数据结构
  - String SDS 二进制安全 记录length
