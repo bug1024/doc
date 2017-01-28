@@ -40,3 +40,19 @@
  - 单CPU需要两个寄存器（基础+界限）
  - 逻辑地址 物理地址 重定位寄存器
  - 分配：固定分区，可变分区
+
+## 监控指标
+ - load 特定事时间间隔内运行队列中的平均线程数
+ - user time CPU执行用户进程所占用的时间
+ - system time CPU在内核所花费的时间
+ - nice time 系统在调整进程优先级的时候所花费的时间
+ - idle time 系统空闲等待进程运行的时间
+ - waiting time CPU在等待IO操作所花费的时间
+ - hard irq time 系统处理硬件中断所占用的时间
+ - soft irq time 系统处理软件中断所占用的时间
+ - steal time 被强制等待虚拟机CPU的时间，占比较高表示当前虚拟机与该宿主其他虚拟机争用CPU频繁
+ - 磁盘剩余空间 使用df和du命令查看
+ - 网络traffic 使用sar命令查看 sar -n DEV 1 1
+ - 磁盘IO 使用iostat命令查看 iostat -d -k
+ - 内存使用 使用free命令查看
+ - swap IO 使用vmstat命令查看
