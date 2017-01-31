@@ -16,3 +16,5 @@ Nginx Lua
 Just do nothing
 
 drunken
+
+nothing
