@@ -23,3 +23,8 @@
 ### 线程池
  - MySQL5.6出现以前，MySQL处理连接的方式是One-Connection-Per-Thread
  - 适用于有大量短查询的业务场景
+
+### 缓冲池
+ - 基于存储引擎的，也就是说每个存储引擎都有自己的缓冲池
+ - MyISAM缓存池大小key_buffer_size
+ - InnoDB缓存池大小innodb_buffer_pool_size
