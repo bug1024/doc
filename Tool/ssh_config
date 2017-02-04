@@ -1,0 +1,34 @@
+# ~/.ssh/config
+
+# support long ssh connection
+ControlPersist 4h
+
+# support ssh connection reuse
+ControlMaster auto
+ControlPath /tmp/ssh_mux_%h_%p_%r
+
+# test-server weidianQA123
+Host test
+    HostName 10.1.22.10
+    User www
+    Port 22
+    ProxyCommand ssh wangyu@10.2.1.203 nc %h %p
+
+# develop-server wy123456
+Host develop
+    HostName 10.1.16.60
+    User wangyu
+    Port 22
+    ProxyCommand ssh wangyu@10.2.1.203 nc %h %p
+
+# log-server koudai@2012
+Host log
+    HostName 10.2.8.51
+    User www
+    Port 22
+    ProxyCommand ssh wangyu@10.2.1.203 nc %h %p
+
+# item-cluster X 32 weidian8s
+Host 10.2.46.*
+    User rd
+    ProxyCommand ssh wangyu@10.2.1.203 -W %h:%p
