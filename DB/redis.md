@@ -32,6 +32,18 @@ rdb配置
     rdbchecksum yes 对rdb文件进行校验
 
 ```
+
+## 主从同步原理
+ - slave向master发送sync指令，master接收到时调用bgsave指令fork一个子进程进行持久化工作，该期间master的写指令都缓存在内存中
+ - bgsave指令完成后master会将rdb文件发送给slave，slave接收到后将其存在磁盘上，然后读入内存，这个动作完成后master会将这段时间缓存的写指令再以redis协议的格式发送给slave
+ - 2.8版版本引入增量同步机制
+
+## 事务
+ - MULTI用来组装一个事务
+ - EC用来执行一个事
+ - DISCARD用来取消一个事务
+ - WATCH用来监视一些key，一旦这些key在事务执行之前被改变，则取消事务的执行
+
 ## Redis Cluster
  - Redis 集群不像单机Redis 那样支持多数据库功能， 集群只使用默认的 0 号数据库， 并且不能使用 SELECT 命令。
  - 节点之间使用Gossip 协议 来进行以下工作
