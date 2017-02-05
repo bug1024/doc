@@ -39,7 +39,15 @@
  - swapping, paging, segmentation
  - 单CPU需要两个寄存器（基础+界限）
  - 逻辑地址 物理地址 重定位寄存器
- - 分配：固定分区，可变分区
+ - 连续分配：固定分区，可变分区
+ - 离散分配：分页(页=>页框)，分段，段页
+
+## 虚拟存储
+ - demand paging
+ - page replacement
+ - allocation of frames
+ - thrashing(抖动)
+
 
 ## 监控指标
  - load 特定事时间间隔内运行队列中的平均线程数
