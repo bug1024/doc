@@ -9,10 +9,15 @@
 ## 系统学习
  - MySQL 2月
  - Redis 2月
- - Nginx
+ - HBase 3月
+ - Nginx 3月
  - RabbitMQ
  - ElasticSearch
  - Thrift
+
+## 项目
+ - 图片上传server
+ - PHP爬虫
 
 ## 英语
  - TED视频
@@ -20,5 +25,7 @@
 
 ## 锻炼
  - 增肌
+    * 腹肌
+    * 背部肌肉
  - 健身房 2天一次
 
