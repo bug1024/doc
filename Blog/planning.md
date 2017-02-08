@@ -16,8 +16,9 @@
  - Thrift
 
 ## 项目
- - 图片上传server
  - PHP爬虫
+ - 图片上传server
+ - 个人博客
 
 ## 英语
  - TED视频
