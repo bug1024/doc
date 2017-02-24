@@ -9,9 +9,9 @@
 ## 系统学习
  - MySQL 2月
  - Redis 2月
- - HBase 3月
  - Nginx 3月
- - RabbitMQ
+ - RabbitMQ 3月
+ - HBase
  - ElasticSearch
  - Thrift
 
