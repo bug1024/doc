@@ -15,7 +15,10 @@ public class Cellphone extends Telephone {
         System.out.println("msg");
     }
 
-    public void msg(String content) {
+    public void msg(String content) throws Exception {
+        if (content.length() == 0) {
+            throw new Exception("content can not be empty");
+        }
         System.out.println("msg:" + content);
     }
 
@@ -24,7 +27,12 @@ public class Cellphone extends Telephone {
         System.out.println(phone.brand);
         phone.call();
         phone.msg();
-        phone.msg("Are you OK?");
+        try {
+            phone.msg("Are you OK?");
+            phone.msg("");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         int a = 12;
         if (true) {
