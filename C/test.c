@@ -13,7 +13,13 @@ void reverse(char str[]) {
     }
 }
 
-int main() {
+void strcopy(const char *from, char *to) {
+    while ((*to++ = *from++));
+}
+
+// 负号开头的参数表示可选
+
+int main(int argc, char *argv[]) {
     int a = ONE;
     printf("hello fork!%d", a);
 
@@ -35,7 +41,12 @@ int main() {
     char str[] = "fork";
     reverse(str);
 
+    char *to;
+    char *from = "Where are you from?";
+    strcopy(from, to);
+
     printf("%d\n", b);
     printf("%s\n", str);
+    printf("%s\n", to);
 }
 
