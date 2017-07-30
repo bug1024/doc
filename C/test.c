@@ -45,6 +45,13 @@ int main(int argc, char *argv[]) {
     char *from = "Where are you from?";
     strcopy(from, to);
 
+    // 联合体只能用第一个成员类型的值进行初始化
+    union u_tag {
+        int ival;
+        float fval;
+        char *sval;
+    } u;
+
     printf("%d\n", b);
     printf("%s\n", str);
     printf("%s\n", to);
