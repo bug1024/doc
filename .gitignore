@@ -8,3 +8,7 @@
 *.class
 *.o
 *.out
+Java/out/
+Java/.idea/
+*.iml
+
