@@ -40,12 +40,16 @@ public class DelayMsg implements Delayed {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("DelayMsg{");
+        final StringBuilder sb = new StringBuilder("Msg{");
         sb.append("delay=").append(delay);
         sb.append(", expire=").append(expire);
         sb.append(", msg='").append(msg).append('\'');
         sb.append(", now=").append(now);
         sb.append('}');
         return sb.toString();
+    }
+
+    public String getMsg() {
+        return msg;
     }
 }
