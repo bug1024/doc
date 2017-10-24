@@ -12,6 +12,7 @@
  - 分表分区 分表方案 跨表跨库查询 MyCat中间件
  - 主从 binlog原理
  - 备份
+ - pt-heartbeat 监控主从同步延迟
 
 ## Nginx
  - 原理 master-worker
