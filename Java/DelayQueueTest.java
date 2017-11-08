@@ -59,4 +59,8 @@ public class DelayQueueTest {
         }, "delayMsgConsumer").start();
     }
 
+    @MyAnnotation(version = "2.0", desc = "just test", author = "bug")
+    public void test() {
+
+    }
 }
