@@ -3,35 +3,40 @@
  - 王煜/男/1990
  - 电子邮箱：bug1024.com@gmail.com
  - 教育经历：本科/福建师范大学/网络工程
- - 工作年限：3年
+ - 工作年限：3年半
  - 英语水平：CET-6，纯英文阅读无障碍
- - 期望职位：PHP开发工程师
- - 自我总结：合格PHPer，半个JSer，Lua爱好者
+ - 期望职位：Java开发工程师 PHP开发工程师
+ - 自我总结：合格Javaer&PHPer，半个JSer
 
 ---
 
 # 工作经历
 
 ## 微店（ 北京 2016年12月至今 ）
- 2014年1月1日上线，总部位于北京，至今已吸引了超过5000多万的商家，遍布全球197个国家，目前公司拥有分布在北京、杭州、武汉及海外印尼等地的1000多名小伙伴，其中技术人员约300人
+ 2014年1月1日上线，至今已吸引了超过7000多万的商家入驻平台，公司全员1000多人，其中技术人员约500人
 
 ### 岗位与职责
- 商品组高级开发工程师
+ - 商品组核心开发工程师
+ - 主要语言为Java和PHP
 
 ### 主要项目
 
-#### xx项目
+#### 商品分类列表重构
+ - 索引表，数据量20亿，分库分表(32 * 32)
+ - 使用内部binlog订阅中间件同步主表信息
+ - 接口日均PV 8000w，平均RT从原来的80ms降40ms
 
 ## 273二手车交易网（ 福州 2014年7月-2016年11月 ）
  创办于2003年，总部位于福建福州，是国内领先的二手车O2O交易平台，业务体系包括连锁店经纪业务以及配套的专业二手车检测、安全支付、售后保障、二手车金融等服务。
 
 ### 岗位与职责
- 外网组技术负责人，组内成员共4人，负责外网主站业务开发与App Server端开发。
+ - 外网组技术负责人，组内成员共4人，负责外网主站业务开发与App Server端开发。
+ - 主要语言为PHP和JS
 
 ### 主要项目
 
 #### 业务框架升级
- - 引入Yaf作为基础框架，提升站点性能，页面平均QPS提升10%
+ - 引入Yaf作为基础框架，重新设计数据库表，提升站点性能，页面平均RT提升40%
  - 封装核心业务，清理历史问题代码，并输出配套说明文档，方便RD与PM加深对业务的认识
  - 升级检索系统，替换原有Sphinx，改用Solr，使用阿里canal作为MySQL同步组件配合RabbitMQ实现索引更新，实现商品列表内容秒级更新
  - 优化短信推送系统，使用Swoole Task实现短信异步推送，使用MongoDB记录短信发送记录，很大程度上解决了原有短信接口同步推送堵塞问题
@@ -41,22 +46,22 @@
 ---
 
 # 个人技能
- 有带团队经验，喜欢阅读技术博客，关注热门技术，涉猎较广，喜欢折腾一些开源工具。
+ 有带小团队经验，喜欢阅读技术博客，关注热门技术，涉猎较广，喜欢折腾一些开源工具。
 
 ## 常用技能
- - Web开发：PHP/Node/Lua
- - Web框架：Yaf/Laravel/ThinkPHP
+ - Web开发：Java/PHP/Lua
+ - Web框架：Dubbo/Yaf/Laravel
  - 前端框架：jQuery/Bootstrap/AngularJS
  - 服务器：Nginx
- - 数据库：MySQL/Redis/Memcached/MongoDB
+ - 数据库：MySQL/Redis/Memcached
  - 版本管理：Git/Svn
- - 测试工具：PHPUnit/PhantomJS/ab/wrk
- - 编辑器：Vim/PhpStorm
+ - 测试工具：JUnit/PHPUnit/PhantomJS/ab/wrk
+ - 编辑器：Vim/IntelliJ IDEA/PhpStorm
 
 ## 个人项目
- - [fis273](https://npm.taobao.org/package/fis273) 一套前端资源管理方案
+ - [jeet-search](https://github.com/bug1024/jeet-search) 一个使用canal增量更新ES索引的方案
  - [jeet-lua](https://github.com/bug1024/jeet-lua) 一个轻量的Lua MVC Web框架
- - [jeet-vim](https://github.com/bug1024/jeet-vim) 一套web开发者的vim配置方案
+ - [fis273](https://npm.taobao.org/package/fis273) 一套前端资源管理方案
 
 ## 书籍网站
  - [开发者头条](http://toutiao.io/) 一个程序员技术分享平台
