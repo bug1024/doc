@@ -12,7 +12,7 @@
 ---
 
 # 个人技能
- * 熟悉Lixux环境下的PHP编程，对PHP内核机制略有了解
+ * 熟悉Linux环境下的PHP编程，对PHP内核机制略有了解
  * 熟悉Java开发规范，掌握maven使用方法，能基于Spring及MyBatis框架快速搭建项目
  * 了解HTML/CSS/JavaScript，并能使用JS开发常用组件
 
