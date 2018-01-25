@@ -195,12 +195,16 @@
     * java.util.concurrent.Executors
 * synchnized和lock区别？synchnized何时是对象锁？什么时候是全局锁？为什么？
 * ThreadLocal是什么？底层如何实现？写一个例子？
+    * 是一个创建线程局部变量的类。通常情况下我们创建的变量，可以被多个线程访问并修改，通过ThreadLocal创建的变量只能被当前线程访问
+    * get/set, set方法会先获取当前线程，然后用当前线程作为句柄，获取ThreadLocaMap对象，并判断该对象是否为空，如果为空则创建一个，并设置值，不为空则直接设置值
+    * ThreadLocal并不会导致内存泄露,因为ThreadLocalMap中的key存储的是ThreadLocal实例的弱引用,因此如果应用使用了线程池,即便之前的线程实例处理完之后出于复用的目的依然存活,也不会产生内存泄露
 * volatile工作原理？
     * 可见性
     * 原子性
     * 顺序性
     * 内存屏障
 * cas知道吗？如何实现？
+    * 利用unsafe提供了原子性操作方法,unsafe为我们提供了硬件级别的原子操作
 * 单例模式？请用4种写法实现
 
 # JVM
@@ -210,6 +214,18 @@
     * 魔数/版本号/常量池/访问标志/类索引/父类索引/接口索引/字段表集合/方法/属性
 * Integer x=5,int y=5,比较x==y都经过哪些步骤？
 * 类加载机制？都有哪些加载器？都加载哪些文件？手写类加载demo？
+    * 虚拟机把描述类的数据从Class文件`加载`到内存，并对数据进行`验证`，`解析`和`初始化`，最终形成可以被虚拟机直接使用的java类型
+    * 类加载器双亲委派模型机制：当一个类收到了类加载请求时，不会自己先去加载这个类，而是将其委派给父类，由父类去加载，如果此时父类不能加载，反馈给子类，由子类去完成类的加载
+    * 实现通过类的权限定名获取该类的二进制字节流的代码块叫做类加载器
+    * 启动类加载器(Bootstrap ClassLoader) 用来加载java核心类库，无法被java程序直接引用
+    * 扩展类加载器(extensions class loader) 用来加载 Java 的扩展库。Java 虚拟机的实现会提供一个扩展库目录。该类加载器在此目录里面查找并加载Java类
+    * 系统类加载器(system class loader)：根据Java应用的类路径（CLASSPATH）来加载 Java 类。一般来说，Java 应用的类都是由它来完成加载的。可以通过 ClassLoader.getSystemClassLoader()来获取它
+    * 用户自定义类加载器：通过继承 java.lang.ClassLoader类的方式实现
+* 简述java内存分配与回收策率以及Minor GC和Major GC
+    * 对象优先在堆的Eden区分配
+    * 大对象直接进入老年代
+    * 长期存活的对象将直接进入老年代
+    * 当Eden区没有足够的空间进行分配时，虚拟机会执行一次Minor GC.Minor Gc通常发生在新生代的Eden区，在这个区的对象生存期短，往往发生Gc的频率较高，回收速度比较快;Full Gc/Major GC 发生在老年代，一般情况下，触发老年代GC的时候不会触发Minor GC,但是通过配置，可以在Full GC之前进行一次Minor GC这样可以加快老年代的回收速度
 * osgi是什么？如何实现的？
     * OSGi(Open Service Gateway Initiative)技术是面向Java的动态模型系统
 * 做过哪些JVM优化？使用哪些方法？达到什么效果？
