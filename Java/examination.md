@@ -203,13 +203,58 @@
     * 原子性
     * 顺序性
     * 内存屏障
+* volatile和synchronized区别
+    * volatile是变量修饰符，而synchronized则作用于一段代码或方法
+    * volatile只是在线程内存和“主”内存间同步某个变量的值；而synchronized通过锁定和解锁某个监视器同步所有变量的值。显然synchronized要比volatile消耗更多资源
 * cas知道吗？如何实现？
     * 利用unsafe提供了原子性操作方法,unsafe为我们提供了硬件级别的原子操作
 * 单例模式？请用4种写法实现
+```
+    public enum Singleton {
+        INSTANCE;
+        public void whateverMethod() {
+        }
+    }
+```
+* 线程池作用
+    * 降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗
+    * 提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行
+    * 提高线程的可管理性
+* ThreadPoolExecutor是Executors类的底层实现
+    * corePoolSize 池中所保存的线程数，包括空闲线程
+    * maximumPoolSize 池中允许的最大线程数
+    * keepAliveTime 当线程数大于核心时，此为终止前多余的空闲线程等待新任务的最长时间
+    * unit keepAliveTime 参数的时间单位
+    * workQueue 执行前用于保持任务的队列。此队列仅保持由 execute方法提交的 Runnable任务
+    * threadFactory 执行程序创建新线程时使用的工厂
+    * handler 由于超出线程范围和队列容量而使执行被阻塞时所使用的处理程序
+* 多线程最佳实践
+    * 给你的线程起个有意义的名字
+    * 避免锁定和缩小同步的范围
+    * 多用并发集合少用同步集合
+    * 多用同步类少用wait 和 notify
+* Java多线程中调用wait() 和 sleep()方法有什么不同？
+    * Java程序中wait 和 sleep都会造成某种形式的暂停
+    * wait()方法用于线程间通信，如果等待条件为真且其它线程被唤醒时它会释放锁
+    * sleep()方法仅仅释放CPU资源或者让当前线程停止执行一段时间，但不会释放锁
+* 常见线程池
+    * newSingleThreadExecutor 单个线程的线程池，即线程池中每次只有一个线程工作，单线程串行执行任务
+    * newFixedThreadExecutor(n) 固定数量的线程池，没提交一个任务就是一个线程，直到达到线程池的最大数量，然后后面进入等待队列直到前面的任务完成才继续执行
+    * newCacheThreadExecutor（推荐使用）可缓存线程池，当线程池大小超过了处理任务所需的线程，那么就会回收部分空闲（一般是60秒无执行）的线程，当有任务来时，又智能的添加新线程来执行。
+    * newScheduleThreadExecutor 大小无限制的线程池，支持定时和周期性的执行线程
 
 # JVM
 * JMV内存模型？垃圾回收器？
+    * 方法区
+    * 虚拟机栈
+    * 本地方法栈
+    * 程序计数器
+    * 运行时常量池
+    * 堆
 * 线上频繁full gc如何处理？cpu使用率过高怎么办？如何定位问题？如何解决？思路和方法怎样的？
+    * full gc频繁说明old区很快满了
+    * 如果是一次fullgc后，剩余对象不多。那么说明你eden区设置太小，导致短生命周期的对象进入了old区
+    * 如果一次fullgc后，old区回收率不大，那么说明old区太小
 * 字节码知道吗？都有哪些？
     * 魔数/版本号/常量池/访问标志/类索引/父类索引/接口索引/字段表集合/方法/属性
 * Integer x=5,int y=5,比较x==y都经过哪些步骤？
@@ -226,6 +271,19 @@
     * 大对象直接进入老年代
     * 长期存活的对象将直接进入老年代
     * 当Eden区没有足够的空间进行分配时，虚拟机会执行一次Minor GC.Minor Gc通常发生在新生代的Eden区，在这个区的对象生存期短，往往发生Gc的频率较高，回收速度比较快;Full Gc/Major GC 发生在老年代，一般情况下，触发老年代GC的时候不会触发Minor GC,但是通过配置，可以在Full GC之前进行一次Minor GC这样可以加快老年代的回收速度
+* GC收集算法
+    * 标记清除 从根节点开始标记所有可达对象，其余没有标记的即为垃圾对象，执行清除。但回收后的空间是不连续的
+    * 标记整理 采用标记清除算法一样的方式进行对象的标记，但在清除时，在回收不存活的对象占用的空间后，会将所有的存活对象网左端空闲空间移动，并更新相应的指针，进行了对象的移动，因此成本更高，但是却解决了内存碎片的问题
+    * 复制算法 从根集合扫描，并将存活对象复制到一块新的，没有使用过的空间中，这种算法当空间存活的对象比较少时，极为高效，但是带来的成本是需要一块内存交换空间进行对象的移动。也就是s0，s1等空间
+* 垃圾收集器，各自的优缺点，重点讲下cms，包括原理，流程，优缺点
+    * 串行垃圾收集器：收集时间长，停顿时间久
+    * 并发垃圾收集器：碎片空间多
+    * CMS：并发标记清除。他的主要步骤有：初始收集，并发标记，重新标记，并发清除（删除），重置
+    * G1：主要步骤：初始标记，并发标记，重新标记，复制清除（整理）
+    * CMS的缺点是对cpu的要求比较高。G1是将内存化成了多块，所有对内存的大小有很大的要求
+    * CMS是清除，所以会存在很多的内存碎片。G1是整理，所以碎片空间较小
+    * 吞吐量优先：G1
+    * 响应优先：CMS
 * osgi是什么？如何实现的？
     * OSGi(Open Service Gateway Initiative)技术是面向Java的动态模型系统
 * 做过哪些JVM优化？使用哪些方法？达到什么效果？
@@ -251,8 +309,7 @@
     public Object createProxyObject(Object obj) {
         this.targetObject = obj;
         Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(obj.getClass());
-        enhancer.setCallback(this);
+        enhancer.setSuperclass(obj.getClass()); enhancer.setCallback(this);
         Object proxyObj = enhancer.create();
         return proxyObj;
     }
