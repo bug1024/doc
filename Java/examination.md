@@ -194,6 +194,10 @@
 * 线程池用过吗？都有什么参数？底层如何实现的？
     * java.util.concurrent.Executors
 * synchnized和lock区别？synchnized何时是对象锁？什么时候是全局锁？为什么？
+    * synchronized主要依赖JVM底层实现，而Lock是通过编码方式实现，其实现方式差别还是比较大
+    * synchronized由于其简单方便，只需要声明在方法、代码块上即可，主要是不需要关心锁释放问题，在一般的编程中使用量还是比较大的，但是在真正的并发编程系统中，Lock方式明显优于synchronized：
+    * 在高版本JDK中，已经对synchronized进行了优化，synchronized和Lock方式在性能方面差别已不太明显
+    * synchronized最致命的缺陷是：synchronized不支持中断和超时，也就是说通过synchronized一旦被阻塞住，如果一直无法获取到所资源就会一直被阻塞，即使中断也没用，这对并发系统的性能影响太大了；Lock支持中断和超时、还支持尝试机制获取锁，对synchronized进行了很好的扩展，所以从灵活性上Lock是明显优于synchronized的
 * ThreadLocal是什么？底层如何实现？写一个例子？
     * 是一个创建线程局部变量的类。通常情况下我们创建的变量，可以被多个线程访问并修改，通过ThreadLocal创建的变量只能被当前线程访问
     * get/set, set方法会先获取当前线程，然后用当前线程作为句柄，获取ThreadLocaMap对象，并判断该对象是否为空，如果为空则创建一个，并设置值，不为空则直接设置值
