@@ -12,10 +12,14 @@
     * 取值只能是整型或者可以转换为整型的数值类型，比如byte、short、int、char、还有枚举；需要强调的是：long和String类型是不能作?在switch语句上的
 * byte数组和char数组的区别？
     * char是unicode编码，占两个字节，一个字节占计算机里的8位(bit)
+* Array和ArrayList
+    * Array是静态的，一旦创建就无法更改大小
+    * ArrayList是动态的，可以改变大小
 * HashMap Hashtable ConcurrentHashMap 区别以及实现？
     * HashMap是非同步的，单线程情况下效率很高
     * Hashtable和ConcurrentHashMap是同步的
     * Hashtable使用syncronized，ConcurrentHashMap使用ReentrantLock
+    * ConcurrentHashMap把Hashtable的一个hash bucket创建了多个segment，默认16份
 * ACID是什么？
     * 指数据库事务正确执行的四个基本要素的缩写
     * 原子性（Atomicity）
@@ -25,6 +29,7 @@
 * 如何保证代码质量?
     * 单元测试
     * 集成测试
+    * 核心链路压测
     * code review
     * 日常/预发/线上
     * 版本控制与快速回滚
