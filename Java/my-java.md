@@ -18,6 +18,7 @@
     * LinkedHashMap 几乎和 HashMap 一样：从技术上来说，不同的是它定义了一个 Entry<K,V> header，这个 header 不是放在 Table 里，它是额外独立出来的。LinkedHashMap 通过继承 hashMap 中的 Entry<K,V>,并添加两个属性 Entry<K,V> before,after,和 header 结合起来组成一个双向链表，来实现按插入顺序或访问顺序排序。
 * ArrayList是线程安全的吗?Vector呢？
     * Vector使用synchronized实现同步
+    * ArrayList在内存不够时默认是扩展50% + 1个，Vector是默认扩展1倍
 * ArrayListCopyOnWriteArrayList是如何实现线程安全的
     * 读操作是无锁的，性能较高。至于写操作，比如向容器中添加一个元素，则首先将当前容器复制一份，然后在新副本上执行写操作，结束之后再将原容器的引用指向新容器。
 
@@ -69,6 +70,12 @@
     * volatile反映到硬件层的话，就是CPU的L1或者L2缓存中对应的缓存行无效
 * sleep方法和wait方法有什么区别
     * sleep保持对象锁，仍然占有该锁，而wait会释放对象锁
+* sleep() 和 yield() 区别
+    * sleep() 方法给其他线程运行机会时不考虑线程的优先级，因此会给低优先级的线程以运行的机会；
+    * yield() 方法只会给相同优先级或更高优先级的线程以运行的机会；
+    * 线程执行 sleep() 方法后转入阻塞（blocked）状态，而执行 yield() 方法后转入就绪（ready）状态；
+    * sleep() 方法声明抛出InterruptedException，而 yield() 方法没有声明任何异常；
+    * sleep() 方法比 yield() 方法（跟操作系统相关）具有更好的可移植性。
 * 悲观锁和乐观锁的区别
     * 悲观锁：每次都加锁，适合写入操作比较频繁的场景
     * 乐观锁：更新数据的时候需要判断该数据是否被别人修改过。如果数据被其他线程修改，则不进行数据更新，比较适合读取频繁的场景
@@ -88,7 +95,12 @@
 * blocked和wait区别
     * BLOCKED是指线程正在等待获取锁；
     * WAITING是指线程正在等待其他线程发来的通知（notify）
-
+* ThreadPoolExecutor 的内部工作原理
+    * 如果当前池大小 poolSize 小于 corePoolSize ，则创建新线程执行任务
+    * 如果当前池大小 poolSize 大于 corePoolSize ，且等待队列未满，则进入等待队列
+    * 如果当前池大小 poolSize 大于 corePoolSize 且小于 maximumPoolSize ，且等待队列已满，则创建新线程执行任务
+    * 如果当前池大小 poolSize 大于 corePoolSize 且大于 maximumPoolSize ，且等待队列已满，则调用拒绝策略来处理该任务
+    * 线程池里的每个线程执行完任务后不会立刻退出，而是会去检查下等待队列里是否还有线程任务需要执行，如果在 keepAliveTime 里等不到新的任务了，那么线程就会退出
 * happens-before原则（先行发生原则）
     * 程序次序规则：一个线程内，按照代码顺序，书写在前面的操作先行发生于书写在后面的操作
     * 锁定规则：一个unLock操作先行发生于后面对同一个锁额lock操作系统是如何操作的
@@ -163,6 +175,13 @@
     * 某个线程在等待一个锁的控制权的这段时间需要中断
     * 需要分开处理一些wait-notify，ReentrantLock里面的Condition应用，能够控制notify哪个线程，锁可以绑定多个条件
     * 具有公平锁功能，每个到来的线程都将排队等候
+* CountDownLatch(闭锁) 与CyclicBarrier(栅栏)的区别
+    * CountDownLatch: 允许一个或多个线程等待其他线程完成操作
+    * CyclicBarrier：阻塞一组线程直到某个事件发生
+    * 闭锁用于等待事件、栅栏是等待线程
+    * 闭锁CountDownLatch做减计数，而栅栏CyclicBarrier则是加计数
+    * CountDownLatch是一次性的，CyclicBarrier可以重用
+    * CountDownLatch一个线程(或者多个)，等待另外N个线程完成某个事情之后才能执行。CyclicBarrier是N个线程相互等待，任何一个线程完成之前，所有的线程都必须等待。 CountDownLatch 是计数器, 线程完成一个就记一个,就像报数一样, 只不过是递减的. 而CyclicBarrier更像一个水闸, 线程执行就像水流, 在水闸处都会堵住, 等到水满(线程到齐)了, 才开始泄流
 * 如何查看死锁情况
     * jstack -l
 
@@ -221,6 +240,9 @@
     * CMS是清除，所以会存在很多的内存碎片。G1是整理，所以碎片空间较小
     * 吞吐量优先：G1
     * 响应优先：CMS
+* Java四种引用类型
+    * 强软弱虚
+    * 主要有两个目的：第一是可以让程序员通过代码的方式决定某些对象的生命周期；第二是有利于JVM进行垃圾回收
 * osgi是什么？如何实现的？
     * OSGi(Open Service Gateway Initiative)技术是面向Java的动态模型系统
 * 做过哪些JVM优化？使用哪些方法？达到什么效果？
@@ -230,6 +252,20 @@
     * Class.forName是从指定的classloader中装载类,如果没有指定,也就是一个参数的时候,是从装载当前对象实例所在的classloader中装载类
     * ClassLoader的实例调用loadclass方法,是指从当前ClassLoader实例中调用类,而这个实例与装载当前所在类实例的Classloader也许不是同一个
     * 说白了就是他们实现装载的时候，使用的类装载器的指定是不同的
+* 如何创建不可变类
+    * 将类声明为final，所以它不能被继承
+    * 将所有的成员声明为私有的，这样就不允许直接访问这些成员
+    * 对变量不要提供setter方法
+    * 将所有可变的成员声明为final，这样只能对它们赋值一次
+    * 通过构造器初始化所有成员，进行深拷贝(deep copy)
+    * 在getter方法中，不要直接返回对象本身，而是克隆对象，并返回对象的拷贝
+* Student s= new Student()，在内存中做了那些事情
+    * 加载Student.class 文件进内存
+    * 在栈内存为s开辟空间
+    * 在堆内存为Student对象开辟空间
+    * 学生对象的成员变量进行显示初始化
+    * 通过构造方法对学生对象变量赋值
+    * 学生对象初始完毕，把对象地址赋值给s变量
 * 怎么知道是哪行代码导致系统CPU高
     * ps -mp PID -o THREAD,tid,time|sort -rn
     * printf "%x\n" TID
@@ -242,6 +278,7 @@
     * 持久代被占满：java.lang.OutOfMemoryError: PermGen space
         * 增加持久代的空间 -XX:MaxPermSize=100M
         * 如果有自定义类加载的需要排查下自己的代码问题
+        * 一般出现于大量Class或者jsp页面，或者采用cglib等反射机制的情况，因为上述情况会产生大量的Class信息存储于方法区
     * 堆栈溢出：java.lang.StackOverflowError
         * 一般就是递归没返回，或者循环调用造成
     * 线程堆栈满：Fatal: Stack size too small
@@ -511,6 +548,23 @@
 
 # 操作系统
 * 常用命令grep find awk
+* 进程调度算法
+    * 先来先服务调度算法(FCFS)
+    * 短作业(进程)优先调度算法(SPF)
+    * 优先权调度算法(HPF)
+    * 高响应比优先调度算法(HRN)
+    * 时间片轮转法（RR）
+    * 多级反馈队列调度算法
+* 操作系统分页调度算法
+    * FIFO
+    * 最优置换
+    * LRU
+    * 时钟算法
+* 磁盘调度算法
+    * 先来先服务（FCFS）
+    * 最短寻道时间优先(SSTF)
+    * 扫描算法（SCAN）
+    * 循环扫描算法（CSCAN）
 
 # 安全
 * CSRF
