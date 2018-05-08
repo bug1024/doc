@@ -39,6 +39,9 @@
     * 实现自己的类加载器
         * 获取类的class文件的字节数组，如loadClassData方法
         * 将字节数组转换为Class类的实例，重写findClass中调用的defineClass方法
+* 热加载的技术原理热
+    * 对于一个被ClassLoader加载到内存的类来说，再次加载的时候就会被findLoadedClass()方法所拦截其判断该类已加载，则不会再次加载，那么热加载的技术本质是要替换到已加载的类
+    * 对于Spring Boot devtools的restart技术,其是使用了两个ClassLoader,对于开发者所写的类使用自定义的ClassLoader,对于第三方包则使用默认加载器,那么每当代码有改动需要热加载时,丢弃自定义的ClassLoader所加载的类,然后重新使用其加载,如此做到了热部署.对于Jrebel使用的貌似是修改类的字节码方式,具体不是很懂也就不讨论了.对于Tomcat,其热部署技术是每次清理之前的引用,然后创建一个新的ClassLoaderWebClassLoader来重新加载应用,这个加载使得永久代中对象增多,那么清理要求是full GC,这个是不可控的,所以也就导致了Tomcat热部署频繁会触发java.lang.OutOfMemoryErrorPermGen space这个bug.
 * 包冲突，类冲突的形成原理及解决办法（可能会引申JDK9的模块化设计）
     * Java应用程序因某种因素，加载不到正确的类而导致其行为跟预期不一致
     * Maven的仲裁机制
