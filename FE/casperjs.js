@@ -17,6 +17,13 @@ var urls = [
     'http://m.sfzpxs.cn/0300/20151108282_11.html'
 ];
 
+var urls = [
+    'http://www.sfzpxs.cn/m/0300/20161208358.html',
+    'http://www.sfzpxs.cn/m/0300/20161208358_2.html',
+    'http://www.sfzpxs.cn/m/0300/20161208358_3.html',
+    'http://www.sfzpxs.cn/m/0300/20161208358_4.html',
+];
+
 
 function getImages() {
     var els = document.querySelectorAll('img');
