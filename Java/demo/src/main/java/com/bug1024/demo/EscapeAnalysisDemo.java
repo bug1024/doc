@@ -21,7 +21,7 @@ public class EscapeAnalysisDemo {
         System.out.println("cost " + (a2 - a1) + " ms");
         // 为了方便查看堆内存中对象个数，线程sleep
         try {
-            Thread.sleep(100000);
+            Thread.sleep(1000000);
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }
